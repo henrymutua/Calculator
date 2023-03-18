@@ -31,3 +31,16 @@ const divide = (a,b, ...args) => {
     }
     return divisionresult;
 }
+
+const operate = () => {
+    let operate;
+    if(buttonAdd)
+    {
+        operate = sum();
+    }
+    else if(buttonSubtract){operate = subtract();
+    }
+    else if(buttonMultiply){operate = multiply();} 
+    else if (buttonDivide){operate = divide();}
+    
+}
