@@ -32,6 +32,12 @@ const divide = (a,b, ...args) => {
     return divisionresult;
 }
 
+const button = document.querySelectorAll('numbers');
+const buttonAdd = document.querySelector('#10');
+const buttonSubtract = document.querySelector('#11');
+const buttonMultiply = document.querySelector('#12');
+const buttonDivide = document.querySelector('#13');
+const buttonEquals = document.querySelector('#14');
 const operate = () => {
     let operate;
     if(buttonAdd)
@@ -42,5 +48,6 @@ const operate = () => {
     }
     else if(buttonMultiply){operate = multiply();} 
     else if (buttonDivide){operate = divide();}
+    return operate;
     
 }
