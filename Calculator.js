@@ -32,22 +32,19 @@ const divide = (a,b, ...args) => {
     return divisionresult;
 }
 
+let displayValue = 0;
+let displayArea = document.getElementByClassName('screen');
+displayArea.innerHTML += displayValue;
+
 const button = document.querySelectorAll('numbers');
-const buttonAdd = document.querySelector('#10');
-const buttonSubtract = document.querySelector('#11');
-const buttonMultiply = document.querySelector('#12');
-const buttonDivide = document.querySelector('#13');
-const buttonEquals = document.querySelector('#14');
-const operate = () => {
-    let operate;
-    if(buttonAdd)
-    {
-        operate = sum();
-    }
-    else if(buttonSubtract){operate = subtract();
-    }
-    else if(buttonMultiply){operate = multiply();} 
-    else if (buttonDivide){operate = divide();}
-    return operate;
-    
+button.forEach(numbers => {
+    addEventListener('click', (e)=>{
+    updateDisplay(e);
+})
+})
+
+let updateDisplay = (e) => {
+    displayValue = e.target.id;
+    displayArea.innerHTML = displayValue;
 }
+
